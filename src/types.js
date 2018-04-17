@@ -275,6 +275,7 @@ declare interface verdaccio$ILocalData {
   remove(name: string): verdaccio$SyncReturn;
   get(): verdaccio$StorageList;
   getPackageStorage(packageInfo: string): verdaccio$IPackageStorage;
+  on(event: string, callback: Function): verdaccio$ILocalData;
 }
 
 declare interface verdaccio$ILocalPackageManager {
