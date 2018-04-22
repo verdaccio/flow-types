@@ -102,8 +102,13 @@ declare type verdaccio$GenericBody = {
   [key: string]: string;
 }
 
+declare type verdaccio$UpLinkMetadata = {
+  etag: string;
+  fetched: number;
+}
+
 declare type verdaccio$UpLinks = {
-  [key: string]: verdaccio$Version;
+  [key: string]: verdaccio$UpLinkMetadata;
 }
 
 declare type verdaccio$Tags = {
@@ -356,6 +361,7 @@ declare module "@verdaccio/types" {
   declare export type LoggerType = verdaccio$LoggerType;
   declare export type PackageList = verdaccio$PackageList;
   declare export type UpLinksConfList = verdaccio$UpLinksConfList;
+  declare export type UpLinkMetadata = verdaccio$UpLinkMetadata;
   declare export type ILocalStorage = verdaccio$ILocalStorage;
   declare export type UpLinkConf = verdaccio$UpLinkConf;
   declare export type PackageAccess = verdaccio$PackageAccess;
