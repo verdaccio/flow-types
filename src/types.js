@@ -235,6 +235,7 @@ declare type verdaccio$Notifications = {
 
 declare type verdaccio$ConfigFile = {
   storage: string;
+  plugins: string;
   self_path: string;
   packages: verdaccio$PackageList;
   uplinks: verdaccio$UpLinksConfList;
@@ -257,6 +258,7 @@ declare interface verdaccio$Config {
   server_id: any;
   _debug?: boolean;
   storage?: string | void;
+  plugins?: string | void;
   secret: string;
   self_path: string;
   packages: verdaccio$PackageList;
