@@ -458,4 +458,5 @@ declare module "@verdaccio/types" {
   declare export type StorageList = verdaccio$StorageList;
   declare export type LocalStorage = verdaccio$LocalStorage;
   declare export type StringValue = verdaccio$StringValue;
+  declare export type Author = verdaccio$Author;
 }
