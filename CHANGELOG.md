@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="4.1.4"></a>
+## [4.1.4](https://github.com/verdaccio/flow-types/compare/v4.1.3...v4.1.4) (2019-01-14)
+
+
+### Bug Fixes
+
+* add AuthPluginPackage type ([0f40389](https://github.com/verdaccio/flow-types/commit/0f40389))
+
+
+
 <a name="4.1.3"></a>
 ## [4.1.3](https://github.com/verdaccio/flow-types/compare/v4.1.2...v4.1.3) (2019-01-12)
 
