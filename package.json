@@ -9,7 +9,9 @@
     "prepublish": "npm run build",
     "format": "prettier --write",
     "release": "standard-version -a -s",
-    "build": "mkdir -p lib && for f in $(find src/ -iname *.js | cut -c5-) ; do cp src/$f lib/$f.flow; done",
+    "build": "npm run build:flow && npm run build:ts",
+    "build:flow": "mkdir -p lib && cp src/flow/types.js lib/types.js.flow",
+    "build:ts": "cp src/typescript/index.d.ts lib/types.d.ts",
     "test": "npm run lint && flow check"
   },
   "keywords": [
