@@ -1,13 +1,15 @@
 import { Stream, PassThrough } from "stream";
 
+declare module "@verdaccio/types" {
 type StringValue = string | void | null;
 
-declare namespace Verdaccio {
+
 	type StorageList = Array<string>;
 	type Callback = Function;
 	type Author = {
 		name: string;
-		email: string;
+		email?: string;
+		url?: string;
 	}
 
 	type Dist = {
@@ -31,33 +33,33 @@ declare namespace Verdaccio {
 	type Version = {
 		name: string,
 		version: string,
-		devDependencies: string,
-		directories: any,
+		devDependencies?: string,
+		directories?: any,
 		dist: Dist,
-		author: string,
+		author: string | Author,
 		main: string,
-		homemage: string,
-		license: string,
+		homemage?: string,
+		license?: string,
 		readme: string,
-		readmeFileName: string,
+		readmeFileName?: string,
+		readmeFilename?: string;
 		description: string,
-		bin: string,
-		bugs: any,
-		files: Array<string>,
-		gitHead: string,
-		maintainers: Array<Author>,
-		repository: string | any,
-		scripts: any,
-		homepage: string,
-		readmeFilename: string;
-		etag: string;
-		contributors: Array<Author>,
+		bin?: string,
+		bugs?: any,
+		files?: Array<string>,
+		gitHead?: string,
+		maintainers?: Array<Author>,
+		contributors?: Array<Author>,
+		repository?: string | any,
+		scripts?: any,
+		homepage?: string,
+		etag?: string;
 		dependencies: any,
-		keywords: string | Array<string>,
+		keywords?: string | Array<string>,
+		nodeVersion?: string,
 		_id: string,
-		nodeVersion: string,
 		_npmUser: Author,
-		_hasShrinkwrap: boolean
+		_hasShrinkwrap?: boolean
 	};
 
 	type Logger = {
@@ -89,7 +91,15 @@ declare namespace Verdaccio {
 	}
 
 	type AttachMents = {
-		[key: string]: Version;
+		[key: string]: AttachMentsItem;
+	}
+
+	type AttachMentsItem = {
+		content_type? : string;
+		data?: string;
+		length?: number;
+		shasum? : string;
+		version?: string;
 	}
 
 	type GenericBody = {
@@ -161,12 +171,9 @@ declare namespace Verdaccio {
 
 	type PackageAccess = {
 		storage?: string;
-		publish: Array<string>;
-		proxy: Array<string>;
-		access: Array<string>;
-		allow_access?: Array<string>;
-		allow_publish?: Array<string>;
-		proxy_access?: Array<string>;
+		publish?: Array<string>;
+		proxy?: Array<string>;
+		access?: Array<string>;
 	}
 
 	type PackageList = {
@@ -229,6 +236,8 @@ declare namespace Verdaccio {
 
 	type SyncReturn = Error | void;
 	type IPackageStorage = ILocalPackageManager | void;
+	type IPackageStorageManager = ILocalPackageManager;
+	type IPluginStorage<T> = ILocalData<T>;
 
 	interface AuthHtpasswd {
 		file: string;
@@ -251,10 +260,10 @@ declare namespace Verdaccio {
 	}
 
 	interface WebConf {
-		enable: boolean;
-		title: string;
-		logo: string;
-		gravatar: boolean;
+		enable?: boolean;
+		title?: string;
+		logo?: string;
+		gravatar?: boolean;
 	}
 
 	interface HttpsConf {
@@ -418,8 +427,4 @@ declare namespace Verdaccio {
 	interface IPluginMiddleware<T> extends IPlugin {
 		register_middlewares(app: any, auth: IBasicAuth<T>, storage: IStorageManager<T>): void;
 	}
-}
-
-declare module "@verdaccio/types" {
-	export = Verdaccio;
 }
