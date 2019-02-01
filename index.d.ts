@@ -6,6 +6,7 @@ type StringValue = string | void | null;
 
 	type StorageList = Array<string>;
 	type Callback = Function;
+	type CallbackError = (err: NodeJS.ErrnoException) => void
 	type Author = {
 		name: string;
 		email?: string;
@@ -337,7 +338,7 @@ type StringValue = string | void | null;
 		[key: string]: any;
 	}
 
-	interface ILocalData<T> extends IPlugin {
+	interface ILocalData<T> extends IPlugin<T> {
 		logger: Logger;
 		config: T & Config;
 		add(name: string, callback: Callback): void;
@@ -406,7 +407,11 @@ type StringValue = string | void | null;
 		add_user(user: string, password: string, cb: Callback): any;
 	}
 
-	interface IPlugin {
+	class Plugin<T> {
+		constructor(config: T, options: PluginOptions<T> );
+	}
+
+	interface IPlugin<T> {
 		version?: string;
 	}
 
@@ -415,7 +420,7 @@ type StringValue = string | void | null;
 		logger: Logger
 	}
 
-	interface IPluginAuth<T> extends IPlugin {
+	interface IPluginAuth<T> extends IPlugin<T> {
 		login_url?: string;
 		authenticate(user: string, password: string, cb: Callback): void;
 		adduser(user: string, password: string, cb: Callback): void;
@@ -424,7 +429,7 @@ type StringValue = string | void | null;
 		allow_publish(user: RemoteUser, pkg: T & PackageAccess, cb: Callback): void;
 	}
 
-	interface IPluginMiddleware<T> extends IPlugin {
+	interface IPluginMiddleware<T> extends IPlugin<T> {
 		register_middlewares(app: any, auth: IBasicAuth<T>, storage: IStorageManager<T>): void;
 	}
 }
