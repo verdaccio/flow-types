@@ -343,7 +343,7 @@ declare interface verdaccio$ILocalData extends verdaccio$IPlugin {
 }
 
 declare interface verdaccio$ILocalPackageManager {
-  path: string;
+  path?: string;
   logger: verdaccio$Logger;
   writeTarball(name: string): verdaccio$IUploadTarball;
   readTarball(name: string): verdaccio$IReadTarball;
