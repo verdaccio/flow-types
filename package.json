@@ -37,7 +37,7 @@
     "husky": "0.14.3",
     "lint-staged": "8.1.0",
     "prettier": "1.15.3",
-    "standard-version": "4.4.0",
+    "standard-version": "5.0.2",
     "typescript": "3.2.4"
   },
   "peerDependencies": {
