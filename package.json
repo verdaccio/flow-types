@@ -38,11 +38,11 @@
     "lint-staged": "8.1.0",
     "prettier": "1.15.3",
     "standard-version": "4.4.0",
-    "typescript": "3.2.4"
+    "typescript": "3.4.1"
   },
   "peerDependencies": {
     "@types/node": "10.12.18",
-    "typescript": "3.2.4",
+    "typescript": "3.4.1",
     "flow-bin": "0.90.0"
   },
   "lint-staged": {
