@@ -369,6 +369,9 @@ type StringValue = string | void | null;
 		setSecret(secret: string): Promise<any>;
 		getPackageStorage(packageInfo: string): IPackageStorage;
 		search(onPackage: Callback, onEnd: Callback, validateName: Function): void;
+		saveToken(token: Token): Promise<any>;
+		deleteToken(user: string, tokenKey: string): Promise<any>;
+		readTokens(filter: TokenFilter): Promise<Array<Token>>;
 	}
 
 	interface ILocalPackageManager {
