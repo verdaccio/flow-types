@@ -430,14 +430,20 @@ type StringValue = string | void | null;
 		logger: Logger
 	}
 
+	type AllowAccess = {
+		name: string;
+		version?: string;
+	}
+
 	interface IPluginAuth<T> extends IPlugin<T> {
 		login_url?: string;
 		authenticate(user: string, password: string, cb: Callback): void;
 		adduser(user: string, password: string, cb: Callback): void;
 		changePassword(user: string, password: string, newPassword: string, cb: Callback): void;
-		allow_access?(user: RemoteUser, pkg: T & PackageAccess, cb: Callback): void;
-		allow_publish?(user: RemoteUser, pkg: T & PackageAccess, cb: Callback): void;
-		allow_unpublish?(user: RemoteUser, pkg: T & PackageAccess, cb: Callback): void;
+		allow_access?(user: RemoteUser, pkg: AllowAccess & PackageAccess, cb: Callback): void;
+		allow_publish?(user: RemoteUser, pkg: AllowAccess & PackageAccess, cb: Callback): void;
+		allow_unpublish?(user: RemoteUser, pkg: AllowAccess & PackageAccess, cb: Callback): void;
+		apiJWTmiddleware(helpers : any): void;
 	}
 
 	interface IPluginMiddleware<T> extends IPlugin<T> {
