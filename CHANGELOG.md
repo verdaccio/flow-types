@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [5.2.0](https://github.com/verdaccio/flow-types/compare/v5.1.2...v5.2.0) (2019-07-07)
+
+
+### Features
+
+* add allow_unpublish to IPluginAuth ([5b4d090](https://github.com/verdaccio/flow-types/commit/5b4d090))
+
+
+
 ### [5.1.2](https://github.com/verdaccio/flow-types/compare/v5.1.1...v5.1.2) (2019-07-04)
 
 
