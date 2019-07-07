@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.2.1](https://github.com/verdaccio/flow-types/compare/v5.2.0...v5.2.1) (2019-07-07)
+
+
+### Bug Fixes
+
+* add allowAccess object ([7a9d934](https://github.com/verdaccio/flow-types/commit/7a9d934))
+
+
+
 ## [5.2.0](https://github.com/verdaccio/flow-types/compare/v5.1.2...v5.2.0) (2019-07-07)
 
 
