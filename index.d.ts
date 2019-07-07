@@ -437,6 +437,7 @@ type StringValue = string | void | null;
 		changePassword(user: string, password: string, newPassword: string, cb: Callback): void;
 		allow_access?(user: RemoteUser, pkg: T & PackageAccess, cb: Callback): void;
 		allow_publish?(user: RemoteUser, pkg: T & PackageAccess, cb: Callback): void;
+		allow_unpublish?(user: RemoteUser, pkg: T & PackageAccess, cb: Callback): void;
 	}
 
 	interface IPluginMiddleware<T> extends IPlugin<T> {
