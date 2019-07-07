@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [5.2.2](https://github.com/verdaccio/flow-types/compare/v5.2.1...v5.2.2) (2019-07-07)
+
+
+### Bug Fixes
+
+* apiJWTmiddleware return as Function ([89da62a](https://github.com/verdaccio/flow-types/commit/89da62a))
+
+
+
 ### [5.2.1](https://github.com/verdaccio/flow-types/compare/v5.2.0...v5.2.1) (2019-07-07)
 
 
