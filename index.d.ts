@@ -443,7 +443,7 @@ type StringValue = string | void | null;
 		allow_access?(user: RemoteUser, pkg: AllowAccess & PackageAccess, cb: Callback): void;
 		allow_publish?(user: RemoteUser, pkg: AllowAccess & PackageAccess, cb: Callback): void;
 		allow_unpublish?(user: RemoteUser, pkg: AllowAccess & PackageAccess, cb: Callback): void;
-		apiJWTmiddleware(helpers : any): Function;
+		apiJWTmiddleware?(helpers : any): Function;
 	}
 
 	interface IPluginMiddleware<T> extends IPlugin<T> {
